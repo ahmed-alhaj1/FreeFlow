@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/static/css/login.css" type="text/css">
+
+
+
+
+{% block content %}
+
+
+<h1>Edit Profile</h1>
+
+<body>
+
+<form action="/EditProfile" method="POST" enctype="novalidate">
+
+{{ form.hidden_tag() }}
+
+	<img class="img-rounded profile-thumbnail" src ="{{
+	  current_user.avatar_hash(size=120) }}">
+
+<p>
+		{{form.profile_img}}<br>
+		{{form.profile_img.file}}
+</p>
+<p>
+		{{form.username.label}}<br>
+		{{form.username(size=32)}}<br>
+</p>
+
+
+<p>
+		{{form.about_me.label }}</br>
+		{{form.about_me(cols=50, rows=4)}} </br>
+</p>
+
+<p>
+	{{form.location.label }}</br>
+	{{form.location(size=32)}}
+</p>
+		<p> {{form.submit()}}</p>
+
+</form>
+</body>
+{%endblock%}

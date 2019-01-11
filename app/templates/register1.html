@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/static/css/login.css" type="text/css">
+
+{%block content %}
+<h1>Register</h1>
+
+
+<form action="/register" method="POST" novalidate>
+
+{{ form.hidden_tag() }}
+<p>
+	{{ form.username.label }}<br>
+	{{ form.username(size=32) }}
+</p>
+
+<p>
+	{{form.password.label}}<br>
+	{{form.password(size=32)}}
+
+</p>
+
+<p>
+	{{form.firstname.label}}<br>
+	{{form.firstname(size=32)}}
+</p>
+<p>
+	{{form.lastname.label}}<br>
+	{{form.lastname(size=32)}}
+</p>
+
+
+<p>
+	{{form.email.label }}<br>
+	{{form.email(size=32)}}
+</p>
+
+
+<p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+<p>{{ form.submit() }}</p>
+
+</form>
+{% endblock %}
+

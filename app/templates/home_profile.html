@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/static/css/login.css" type="text/css">
+
+{% block body %}
+
+<body>
+<tr valign="top">
+<h1>user: {{current_user.username}}</h1>
+<img class="img-rounded profile-thumbnail" src ="{{
+  current_user.avatar_hash(size=120) }}">
+</tr>
+
+{% if current_user.location %}
+    From <a href="http://maps.google.com/?q={{
+current_user.location }}">
+    {{ current_user.location }}
+    </a>
+{%endif%}
+
+<p> {{current_user.about_me}}</p>
+<p> {{current_user.email }}</p>
+
+<div>
+FreeFlow:
+
+
+
+
+
+	<a herf="{{url_for('main.home')}}"> Home </a>
+	{% if current_user.is_anonymous %}
+	<a herf="{{url_for('main.load_login')}}">Login</a>
+	{% else %}
+	<a herf="{{url_for('main.sign_out')}}">Logout</a>
+
+</div>
+</body>
+{%endif %}
+{% endblock %}

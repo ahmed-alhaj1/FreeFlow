@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/static/css/login.css" type ="text/css" >
+{%block content %}
+<h1> Welcom to FreeFlow, {{current_user.username}} ! </h1>
+
+
+		<form action = "/EditProfilePic" method = "POST"
+			 enctype = "multipart/form-data">
+			 <input type = "file" name = "file" />
+			 <input type = "submit"/>
+		</form>
+
+{% endblock %}
